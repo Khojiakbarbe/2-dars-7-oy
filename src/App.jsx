@@ -52,11 +52,11 @@ function App() {
 
   return (
     <div className='flex justify-center items-center pt-10'>
-      <div className='w-[40%] border-[40px] border-[#0B2434] text-center p-5'>
-        <h1 className='text-6xl font-bold'>Tenzies</h1>
-        <p className='text-2xl mb-8'>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+      <div className='w-[80%] md:w-[40%] border-[40px] border-[#0B2434] text-center p-5'>
+        <h1 className='text-4xl md:text-6xl font-bold'>Tenzies</h1>
+        <p className='text-1xl md:text-2xl mb-8'>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
 
-        <div className='grid grid-cols-5 text-center gap-5'>
+        <div className='grid grid-cols-3 md:grid-cols-5 text-center gap-5'>
           {btns.map((p, i) => <div key={i} value={i} onClick={(e) => { chooseNumb(e, i) }} className='shadow p-[10px_10px] w-[80%] h-max text-1xl font-bold hover:bg-slate-400 transition cursor-pointer rounded-md '>{p}</div>)}
         </div>
         <button  className={`bg-[#5035FF] text-white p-[10px_20px] mt-9 rounded-lg  ${!roll && 'opacity-50 cursor-default'}`}  onClick={roll ? randomize : null}>{roll ? 'ROLL' : "You Win"} </button>
